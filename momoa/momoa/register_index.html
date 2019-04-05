@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>momoA_test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/defalt.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./css/mainPage.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen"  href="./css/login.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/myPage.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/register.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./css/sidePage.css"> -->
+    <!-- <script src="main.js"></script> -->
+
+    
+    <script>
+            // 유효성 검사
+            function checkReg(){
+    
+                var id=document.getElementById('id');
+                var p1=document.getElementById('p1');
+    
+                if(id.value.match( re) ) p1.innerHTML="가입 가능합니다.";
+                else p1.innerHTML="요구하는 형식이 아닙니다."
+    
+    
+                var re=/^[a-zA-Z0-9]{4,12}$/   //id 검사
+        
+    
+            }
+    
+        </script>
+
+         <!-- <script>
+
+        function checked()
+        {
+            //아이디의 id값
+            var id = document.getElementById("id");
+            //비밀번호의 id값
+            var pw = document.getElementById("pw");
+             //비밀번호확인의 id값
+            var pwc = document.getElementById("pwc");
+           //e-mail의 id값
+            var email = document.getElementById("email");
+           //이름의 id값
+            var name = document.getElementById("name");
+           
+           
+         
+          
+            var regExp1 = /^[a-zA-Z0-9]{4,12}$/;
+            //id와 비밀번호의 유효성 검사
+            var regExp2 = /[a-z0-9]{2,}@[a-z0-9-]{2,}\.[a-z0-9]{2,}/i;
+            //e-mail의 유효성 검사
+            var regname = /^[가-힝]{2,}$/;
+            //이름의 유효성 검사
+            
+            if(!regExp1.test(id))
+             //아이디 유효성 검사 후 4~12자의 영문 대소문자와 숫자의 유효성이 안 맞다면
+             //공백을 주고 알람을 띄운다.
+             //밑에 동일한 유효성 검사
+            {
+                alert("형식에 맞춰 ID를 입력하세요");
+                idtext.value = "";
+                idtext.focus();
+                return false;
+            }
+            else if (!regExp1.test(password))
+            {
+                alert("형식에 맞춰 비밀번호를 입력하세요");
+                patext.value = "";
+                patext.focus();
+                return false;
+            } 
+            else if (!(cpassword.slice(0, cpassword.length) === password.slice(0, password.length))) 
+            {
+                alert("비밀번호가 동일하지 않습니다.");
+                cpatext.value = "";
+                cpatext.focus();
+                return false;
+            } 
+            else if ((cpassword.slice(0, cpassword.length) === id.slice(0, id.length))) 
+            {
+                alert("비밀번호가 ID와 동일하면 안됩니다.");
+                patext.value = "";
+                patext.focus();
+                cpatext.value = "";
+                cpatext.focus();
+                return false;
+            }
+            else if (!regExp2.test(mail))
+            {
+                alert("올바른 이메일 형식이 아닙니다.");
+                mtext.value = "";
+                mtext.focus();
+                return false;
+            }
+            else if (!regname.test(name))
+            {
+                alert("이름을 제대로 입력하세요");
+                nametext.value = "";
+                nametext.focus();
+                return false;
+            } 
+            
+        
+             }
+          
+    </script> -->
+    
+        
+      
+</head>
+<body>
+    <div class="header"></div>
+    <div class="section">
+        <div class="container">
+
+            <!-- form 태그 
+ 유효성 검사가 다 된 후 버튼 클릭시 momoa@naver.com로 메일 가도록 설정
+ -->
+ <!-- 밑에는 그냥 Html -->
+    <form action="mailto:momoa@naver.com?subject=[s]" method="post" name="data" onsubmit="return checked()"  >
+    
+       
+            <table name="data" width="800" height="230" align ="center">
+                <tr>
+                    <td colspan="2"  align ="center"  >momoa 회원가입</td>
+                </tr>
+                <tr>
+                    <td align ="left" >아이디 </td>
+                    <td ><input type="text" name="아이디" id="id" size="20" maxlength="12"/>
+                        <button onclick="checkReg()">아이디 중복확인</button>    (4~12자의 영문 대소문자와 숫자로만 입력)
+                        <p id="p1"></p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td align ="left">비밀번호 </td>
+                    <td><input type="password"  id="pw" name="비밀번호" size="20" maxlength="12" />    (4~12자의 영문 대소문자와 숫자로만 입력) </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td align ="left">비밀번호 확인</td>
+                    <td><input type="password" name="비밀번호확인" id="cpw" size="20" maxlength="12" />
+                        <button onclick="checkReg()">비밀번호 확인</button>
+                        <p id="p2"></p>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td align ="left">이름</td>
+                    <td ><input type="text" name="이름"  id="name" size="20" /></td>
+                </tr>
+        
+                <tr>
+                    <td align ="left">생일</td>
+                    <td><input type="date" id="birth" name="birthday" value="2019-04-03">
+                        <input type="radio" name="birth" value="음력">음력
+                        <input type="radio" name="birth" value="양력" checked="checked">양력
+                    </td>
+                        
+                    </tr>
+        
+                <tr>
+                    <td align ="left">핸드폰번호</td>
+                    <td><select name="핸드폰 번호" id="tel">
+                        <option>010</option>
+                        <option>011</option>
+                        <option>019</option>
+                    </select> -
+                    <input type="text"> - <input type="text"> 
+                        <p id="p3"></p>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td align ="left">email</td>
+                    <td><input type="text" name="메일" id="email" size="20" />@
+                        <select>
+                            <option>naver.com</option>
+                            <option>hanmail.net</option>
+                            <option>gmail.com</option>
+                        </select>
+                    
+                    </td>
+                    <p id="p4"></p>
+                 </tr>
+        
+                 <!-- <tr>
+                    <td align ="left">배송지 주소</td>
+                    <td>
+                        <input type="text" name="우편번호" id="postnum" size="5">
+                        <button onclick="checkReg()">우편번호 검색</button>
+                        <br>
+                        <input type="text" name="주소1" id="adress1" size="20" />  기본주소<br>     
+                        <input type="text" name="주소2" id="adress2" size="20" />  나머지주소
+        
+                    </td>
+                 </tr> -->
+        
+        
+        
+                <tr>
+                    <td align ="left">SMS 수신여부</td>
+                    <td>
+                        <input type="checkbox" name="sms" value="동의" id="sms">동의함
+                        <p>쇼핑몰에서 제공하는 할인/이벤트 정보를 SMS으로 받으실 수 있습니다.</p>
+        
+                    </td>
+                </tr>
+        
+                
+               
+            </table><br />
+            <div align ="center">
+                <input type="submit"  value="회원가입" />
+                <input type="reset" value="취소하기" />
+            </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="footer"></div>    
+</body>
+</html>

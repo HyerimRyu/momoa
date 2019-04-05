@@ -1,0 +1,19 @@
+body {margin: 0; padding: 0;}
+.header, .section, .footer {
+    width: 100%;
+}
+.header, .footer {height: 229px; background-color: cadetblue;}
+.container {background-color: blanchedalmond; width: 1080px; margin: 0 auto; height: 700px;}
+
+@media screen and (max-width:576px) {
+    
+  }
+
+@media screen and (max-width:768px ) {
+
+}
+@media screen and (max-width:1080px ) {
+    .header {height: 113px;}
+    .container {width: 100%; }
+
+}  
